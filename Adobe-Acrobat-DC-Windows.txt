@@ -1,10 +1,18 @@
 Title: Adobe Acrobat DC 15.006.30096 - Adobe Acrobat DC 15.x - Windows
-Additional Notes: 15.006.30096 Out Of Cycle Update, October 29, 2015
+Additional Notes: 15.006.30096 Out Of Cycle Update (Classic Track), October 29, 2015
 
 ----------
 RELEVANCE
 ----------
+name of operating system as lowercase starts with "win"
 
+exists regapp "acrobat.exe"
+
+exists key "HKLM\Software\Adobe\Adobe Acrobat\15.0\" of registry
+
+exists regapp "iexplore.exe" whose (version of it >= "8")
+
+(exists key whose (value "DisplayName" of it as string contains "Adobe Acrobat" AND (it >= "15.0.00" AND it < "11.0.04") of (value "DisplayVersion" of it as string as version)) of key "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall" of registry)
 
 ----------
 ACTION SCRIPT
