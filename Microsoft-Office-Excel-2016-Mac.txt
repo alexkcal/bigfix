@@ -1,0 +1,16 @@
+Title: [Application Name] [Application Version] - [Previous Version (optional)] - OS Platform
+Additional Notes: [Update Information] - [Release Date]
+
+----------
+RELEVANCE
+----------
+mac of operating system
+
+system version >= "10.10.0"
+
+exists application whose (name of it = "Microsoft Excel.app" and version of it < "15.16.0" AND version of it >= "15.15.0")
+
+----------
+ACTION SCRIPT
+----------
+
