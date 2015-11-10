@@ -1,5 +1,5 @@
-Title: [Application Name] [Application Version] - [Previous Version (optional)] - OS Platform
-Additional Notes: [Update Information] - [Release Date]
+Title: Microsoft Word 2016 Update 15.16.0 - 15.x - Mac OS X
+Additional Notes: Update 15.16.0 - November 10, 2015
 
 ----------
 RELEVANCE
@@ -14,3 +14,21 @@ exists application whose (name of it = "Microsoft Word.app" and version of it < 
 ACTION SCRIPT
 ----------
 prefetch Microsoft_Word_15.16.0_Updater.pkg sha1:53c3d21d1c77375d8e4dfda93c12889d449f3611 size:916076269 http://download.microsoft.com/download/8/E/8/8E80527B-9970-437C-B385-399E16DB1A36/Microsoft_Word_15.16.0_Updater.pkg sha256:e1f73d19323d5d1659275a8b80a7fa7a039442e955950afc6a7ce0f3e8199453
+
+// Delete the Word Update PKG in case it exists
+wait /bin/sh -c "rm '/private/tmp/Microsoft_Word_15.16.0_Updater.pkg' "
+
+// Kill all Word processes to forcibly close Word
+// Uncomment the next line to forcibly close Word by killing the process
+// wait /usr/bin/killall -9 "Microsoft Word"
+
+// Move the downloaded Word Update PKG to the temp directory
+move "{posix path of file "Microsoft_Word_15.16.0_Updater.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/Microsoft_Word_15.16.0_Updater.pkg"
+
+// Install the Word Update
+wait installer -pkg "/private/tmp/Microsoft_Word_15.16.0_Updater.pkg" -target /
+
+// Delete the Word Update PKG in the temp directory
+wait /bin/sh -c "rm '/private/tmp/Microsoft_Word_15.16.0_Updater.pkg' "
+
+action requires restart
