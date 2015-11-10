@@ -1,0 +1,10 @@
+Title: [Application Name] [Application Version] - [Previous Version (optional)] - OS Platform
+Additional Notes: [Update Information] - [Release Date]
+
+----------
+RELEVANCE
+----------
+
+----------
+ACTION SCRIPT
+----------
