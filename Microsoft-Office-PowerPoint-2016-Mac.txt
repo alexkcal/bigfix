@@ -1,4 +1,4 @@
-Title: Microsoft Word 2016 Update 15.16.0 - 15.x - Mac OS X
+Title: Microsoft PowerPoint 2016 Update 15.16.0 - 15.x - Mac OS X
 Additional Notes: Update 15.16.0 - November 10, 2015
 
 ----------
@@ -13,4 +13,4 @@ exists application whose (name of it = "Microsoft PowerPoint.app" and version of
 ----------
 ACTION SCRIPT
 ----------
-
+prefetch Microsoft_PowerPoint_15.16.0_Updater.pkg sha1:fc2d26a0e120a182aab8548aaf3a61c688a5488d size:758270360 http://download.microsoft.com/download/B/9/5/B95E058E-7BE9-485E-AB5E-46AD8DEE7036/Microsoft_PowerPoint_15.16.0_Updater.pkg sha256:c5261936fbf50339761b51ad6cf751e8e5978bc9af5f56ce1a1a34eef6a864f1
