@@ -13,4 +13,4 @@ exists application whose (name of it = "Microsoft Excel.app" and version of it <
 ----------
 ACTION SCRIPT
 ----------
-
+prefetch Microsoft_Excel_15.16.0_Updater.pkg sha1:40de190e7f1f64b659dbb4d59cdc3bc8443d6272 size:808116322 http://download.microsoft.com/download/2/B/5/2B5F0C37-F4C1-4A32-82F2-975EB6A434FA/Microsoft_Excel_15.16.0_Updater.pkg sha256:e11d4966cbad43e0364ed0708003dddcc7a07c2316f46af9799691985f1041b2
