@@ -13,4 +13,5 @@ exists application whose (name of it = "Microsoft OneNote.app" and version of it
 ----------
 ACTION SCRIPT
 ----------
+prefetch Microsoft_OneNote_15.16.0_Updater.pkg sha1:853f5dd8de4fb55c2f18c5341c7fe6ec61610971 size:376165541 http://download.microsoft.com/download/7/2/8/72850247-15EC-41AF-8355-C96CE8B4B755/Microsoft_OneNote_15.16.0_Updater.pkg sha256:2ae44ebf8df1424419799b99d5269900fb34ed083a39e664db7eda097da8126d
 
