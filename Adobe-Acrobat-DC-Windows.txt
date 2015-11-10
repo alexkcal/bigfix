@@ -1,0 +1,10 @@
+prefetch Acrobat2015Upd1500630096.msp sha1:3054b5576492d1926efb50ff5fbc9b316f76c43a size:94093312 ftp://ftp.adobe.com/pub/adobe/acrobat/win/Acrobat2015/1500630096/Acrobat2015Upd1500630096.msp sha256:bfa9ff0ed09da5d5bf4819283b052fd880ea71c96e2e5852c081db535f0cc7ac
+
+// Install the Acrobat Update in Quiet Mode
+wait msiexec.exe /p "__Download\Acrobat2015Upd1500630096.msp" REINSTALL=ALL REINSTALLMODE=omu /qn
+
+// Kill the Acrobat task to force close Acrobat DC
+// Uncomment the next line to forcibly close Acrobat DC by killing the task
+// waithidden {if (name of operating system = "WinXP" AND personal bit (suite mask of operating system)) then "tskill acrobat /a" else "taskkill /F /IM acrobat.exe"}
+
+action may require restart "3054b5576492d1926efb50ff5fbc9b316f76c43a"
