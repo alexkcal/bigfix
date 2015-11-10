@@ -8,11 +8,13 @@ name of operating system as lowercase starts with "win"
 
 exists regapp "acrobat.exe"
 
-exists key "HKLM\Software\Adobe\Adobe Acrobat\15.0\" of registry
+exists key "HKLM\Software\Adobe\Adobe Acrobat\DC\" of registry
 
 exists regapp "iexplore.exe" whose (version of it >= "8")
 
-(exists key whose (value "DisplayName" of it as string contains "Adobe Acrobat" AND (it >= "15.0.00" AND it < "11.0.04") of (value "DisplayVersion" of it as string as version)) of key "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall" of registry)
+// Adobe Acrobat DC will have different values for this registry key based on how it was pacakged with Adobe Creative Cloud Packager
+// This is not as useful to use to target the version number of Adobe Acrobat DC
+(exists key whose (value "DisplayName" of it as string contains "Adobe Acrobat" AND (it >= "15.0.00" AND it < "15.0.04") of (value "DisplayVersion" of it as string as version)) of key "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall" of registry)
 
 ----------
 ACTION SCRIPT
@@ -22,7 +24,7 @@ prefetch Acrobat2015Upd1500630096.msp sha1:3054b5576492d1926efb50ff5fbc9b316f76c
 // Install the Acrobat Update in Quiet Mode
 wait msiexec.exe /p "__Download\Acrobat2015Upd1500630096.msp" REINSTALL=ALL REINSTALLMODE=omu /qn
 
-// Kill the Acrobat task to force close Acrobat DC
+// Kill the Acrobat task to forcibly close Acrobat DC
 // Uncomment the next line to forcibly close Acrobat DC by killing the task
 // waithidden {if (name of operating system = "WinXP" AND personal bit (suite mask of operating system)) then "tskill acrobat /a" else "taskkill /F /IM acrobat.exe"}
 
