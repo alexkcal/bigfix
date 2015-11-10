@@ -1,3 +1,14 @@
+Title: Adobe Acrobat DC 15.006.30096 - Adobe Acrobat DC 15.x - Windows
+Additional Notes: 15.006.30096 Out Of Cycle Update, October 29, 2015
+
+----------
+RELEVANCE
+----------
+
+
+----------
+ACTION SCRIPT
+----------
 prefetch Acrobat2015Upd1500630096.msp sha1:3054b5576492d1926efb50ff5fbc9b316f76c43a size:94093312 ftp://ftp.adobe.com/pub/adobe/acrobat/win/Acrobat2015/1500630096/Acrobat2015Upd1500630096.msp sha256:bfa9ff0ed09da5d5bf4819283b052fd880ea71c96e2e5852c081db535f0cc7ac
 
 // Install the Acrobat Update in Quiet Mode
