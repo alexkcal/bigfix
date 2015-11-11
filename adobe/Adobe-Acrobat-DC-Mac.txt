@@ -4,7 +4,11 @@ Additional Notes: 15.006.30096 Out Of Cycle Update (Classic Track), October 29, 
 ----------
 RELEVANCE
 ----------
+mac of operating system
 
+system version >= "10.9.0"
+
+exists application whose (name of it = "Adobe Acrobat DC.app" and version of it < "15.006.30096" AND version of it >= "15.0")
 
 ----------
 ACTION SCRIPT
@@ -17,7 +21,7 @@ prefetch Acrobat2015Upd1500630096.pkg sha1:f1c891631decd0ecdbf07faec3ef8d72381df
 wait /bin/sh -c "rm '/private/tmp/Acrobat2015Upd1500630096.pkg' "
 
 // Kill all Acrobat processes to forcibly close Acrobat DC
-// Uncomment the next line to forcibly close Acrobat DC by killing the task
+// Uncomment the next line to forcibly close Acrobat DC by killing the process
 // wait /usr/bin/killall "AdobeAcrobat"
 
 // Move the downloaded Acrobat DC Update PKG to the temp directory
