@@ -31,4 +31,5 @@ wait installer -pkg "/private/tmp/Acrobat2015Upd1500630096.pkg" -target /
 // Delete the Acrobat Reader DC Update PKG in the temp directory
 wait /bin/sh -c "rm '/private/tmp/Acrobat2015Upd1500630096.pkg' "
 
-action requires restart
+// Uncomment the next line to require a restart after installing the update
+// action requires restart
