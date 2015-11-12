@@ -1,4 +1,4 @@
-Title: Adobe Reader DC 15.006.30096 - Adobe Reader DC 15.x - Mac OS X
+Title: Adobe Acrobat Reader DC 15.006.30096 - Adobe Acrobat Reader DC 15.x - Mac OS X
 Additional Notes: 15.006.30096 Out Of Cycle Update (Classic Track), October 29, 2015
 
 ----------
@@ -8,29 +8,27 @@ mac of operating system
 
 system version >= "10.9.0"
 
-exists application whose (name of it = "Adobe Acrobat DC.app" and version of it < "15.006.30096" AND version of it >= "15.0")
+exists application whose (name of it = "Adobe Acrobat Reader DC.app" and version of it < "15.006.30096" AND version of it >= "15.0")
 
 ----------
 ACTION SCRIPT
 ----------
-ADOBE ACROBAT DC FOR MAC - CLASSIC UPDATE PATH
-
 prefetch Acrobat2015Upd1500630096.pkg sha1:f1c891631decd0ecdbf07faec3ef8d72381df61c size:158482509 ftp://ftp.adobe.com/pub/adobe/acrobat/mac/Acrobat2015/1500630096/Acrobat2015Upd1500630096.pkg sha256:bcb8d8056f29606055d1bb4d61c3bc260c61aa717023c854c88f253899002ee7
 
-// Delete the Acrobat DC Update PKG in case it already exists
+// Delete the Acrobat Reader DC Update PKG in case it already exists
 wait /bin/sh -c "rm '/private/tmp/Acrobat2015Upd1500630096.pkg' "
 
-// Kill all Acrobat processes to forcibly close Acrobat DC
+// Kill all Acrobat processes to forcibly close Acrobat Reader DC
 // Uncomment the next line to forcibly close Acrobat DC by killing the process
 // wait /usr/bin/killall "AdobeAcrobat"
 
-// Move the downloaded Acrobat DC Update PKG to the temp directory
+// Move the downloaded Acrobat Reader DC Update PKG to the temp directory
 move "{posix path of file "Acrobat2015Upd1500630096.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/Acrobat2015Upd1500630096.pkg"
 
-// Install the Acrobat DC update
+// Install the Acrobat Reader DC update
 wait installer -pkg "/private/tmp/Acrobat2015Upd1500630096.pkg" -target /
 
-// Delete the Acrobat DC Update PKG in the temp directory
+// Delete the Acrobat Reader DC Update PKG in the temp directory
 wait /bin/sh -c "rm '/private/tmp/Acrobat2015Upd1500630096.pkg' "
 
 action requires restart
