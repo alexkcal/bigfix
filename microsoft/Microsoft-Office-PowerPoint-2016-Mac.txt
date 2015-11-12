@@ -14,3 +14,22 @@ exists application whose (name of it = "Microsoft PowerPoint.app" and version of
 ACTION SCRIPT
 ----------
 prefetch Microsoft_PowerPoint_15.16.0_Updater.pkg sha1:fc2d26a0e120a182aab8548aaf3a61c688a5488d size:758270360 http://download.microsoft.com/download/B/9/5/B95E058E-7BE9-485E-AB5E-46AD8DEE7036/Microsoft_PowerPoint_15.16.0_Updater.pkg sha256:c5261936fbf50339761b51ad6cf751e8e5978bc9af5f56ce1a1a34eef6a864f1
+
+// Delete the PowerPoint Update PKG in case it exists
+wait /bin/sh -c "rm '/private/tmp/Microsoft_PowerPoint_15.16.0_Updater.pkg' "
+
+// Kill all PowerPoint processes to forcibly close PowerPoint
+// Uncomment the next line to forcibly close PowerPoint by killing the process
+// wait /usr/bin/killall -9 "Microsoft PowerPoint"
+
+// Move the downloaded PowerPoint Update PKG to the temp directory
+move "{posix path of file "Microsoft_PowerPoint_15.16.0_Updater.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/Microsoft_PowerPoint_15.16.0_Updater.pkg"
+
+// Install the PowerPoint Update
+wait installer -pkg "/private/tmp/Microsoft_PowerPoint_15.16.0_Updater.pkg" -target /
+
+// Delete the PowerPoint Update PKG in the temp directory
+wait /bin/sh -c "rm '/private/tmp/Microsoft_PowerPoint_15.16.0_Updater.pkg' "
+
+// Uncomment the next line to require a restart after the update
+// action requires restart
