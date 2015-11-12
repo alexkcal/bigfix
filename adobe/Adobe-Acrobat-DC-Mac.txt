@@ -1,7 +1,14 @@
-Title: Adobe Acrobat Pro DC 15.006.30096 - Adobe Acrobat Pro DC 15.x - Mac OS X
-Additional Notes: 15.006.30096 Out Of Cycle Update (Classic Track), October 29, 2015
+Title: Adobe Acrobat Pro DC 15.009.20077 - Adobe Acrobat Pro DC 15.x - Mac OS X
+Additional Notes: 15.009.20077 Out Of Cycle Update (Continuous Track), October 29, 2015
 
-The version of Acrobat DC after installing this update is 15.006.30096. BigFix picks it up as "15.6.30096" which is the value to use in the Relevance
+The version of Acrobat DC after installing this update is 15.009.20077. BigFix detects it as "15.009.20077" which is the value used in the Relevance
+
+----------
+DESCRIPTION
+----------
+Use this action to update Adobe Acrobat Pro DC to version 15.009.20077. This action is relevant on Macs running Mavericks or newer with a previous version of Adobe Acrobat Pro DC installed.
+
+Adobe Acrobat Pro DC Update 15.009.20077 Out Of Cycle Update (Continuous Track), October 29, 2015
 
 ----------
 RELEVANCE
@@ -10,28 +17,28 @@ mac of operating system
 
 system version >= "10.9.0"
 
-exists application whose (name of it = "Adobe Acrobat.app" and version of it < "15.0" AND version of it >= "15.6.30096")
+exists application whose (name of it = "Adobe Acrobat.app" and version of it < "15.9.20077" AND version of it >= "15.0")
 
 ----------
 ACTION SCRIPT
 ----------
-prefetch AcrobatDCUpd1500920077.pkg sha1:0bd3e9c6494757440b167f830e43f795013c32cd size:168481038 ftp://ftp.adobe.com/pub/adobe/acrobat/mac/AcrobatDC/1500920077/AcrobatDCUpd1500920077.pkg sha256:effc530b5b15e5e3b48825d5cd59afd042017fd6c76151a5b4668686de2fdf56
+prefetch AcrobatDCUpd1500920077.pkg sha1:0bd3e9c6494757440b167f830e43f795013c32cd size:168481038 http://ardownload.adobe.com/pub/adobe/acrobat/mac/AcrobatDC/1500920077/AcrobatDCUpd1500920077.pkg sha256:effc530b5b15e5e3b48825d5cd59afd042017fd6c76151a5b4668686de2fdf56
 
 // Delete the Acrobat DC Update PKG in case it already exists
-wait /bin/sh -c "rm '/private/tmp/Acrobat2015Upd1500630096.pkg' "
+wait /bin/sh -c "rm '/private/tmp/AcrobatDCUpd1500920077.pkg' "
 
 // Kill all Acrobat processes to forcibly close Acrobat DC
 // Uncomment the next line to forcibly close Acrobat DC by killing the process
-// wait /usr/bin/killall "AdobeAcrobat"
+// wait /bin/sh -c "/usr/bin/killall 'AdobeAcrobat' "
 
 // Move the downloaded Acrobat DC Update PKG to the temp directory
-move "{posix path of file "Acrobat2015Upd1500630096.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/Acrobat2015Upd1500630096.pkg"
+move "{posix path of file "AcrobatDCUpd1500920077.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/AcrobatDCUpd1500920077.pkg"
 
 // Install the Acrobat DC update
-wait installer -pkg "/private/tmp/Acrobat2015Upd1500630096.pkg" -target /
+wait installer -pkg "/private/tmp/AcrobatDCUpd1500920077.pkg" -target /
 
 // Delete the Acrobat DC Update PKG in the temp directory
-wait /bin/sh -c "rm '/private/tmp/Acrobat2015Upd1500630096.pkg' "
+wait /bin/sh -c "rm '/private/tmp/AcrobatDCUpd1500920077.pkg' "
 
 // Uncomment the next line to require a restart after installing the update
 // action requires restart
