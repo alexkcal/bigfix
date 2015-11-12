@@ -15,3 +15,21 @@ ACTION SCRIPT
 ----------
 prefetch Microsoft_OneNote_15.16.0_Updater.pkg sha1:853f5dd8de4fb55c2f18c5341c7fe6ec61610971 size:376165541 http://download.microsoft.com/download/7/2/8/72850247-15EC-41AF-8355-C96CE8B4B755/Microsoft_OneNote_15.16.0_Updater.pkg sha256:2ae44ebf8df1424419799b99d5269900fb34ed083a39e664db7eda097da8126d
 
+// Delete the OneNote Update PKG in case it exists
+wait /bin/sh -c "rm '/private/tmp/Microsoft_OneNote_15.16.0_Updater.pkg' "
+
+// Kill all OneNote processes to forcibly close OneNote
+// Uncomment the next line to forcibly close OneNote by killing the process
+// wait /usr/bin/killall -9 "Microsoft OneNote"
+
+// Move the downloaded OneNote Update PKG to the temp directory
+move "{posix path of file "Microsoft_OneNote_15.16.0_Updater.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/Microsoft_OneNote_15.16.0_Updater.pkg"
+
+// Install the OneNote Update
+wait installer -pkg "/private/tmp/Microsoft_OneNote_15.16.0_Updater.pkg" -target /
+
+// Delete the OneNote Update PKG in the temp directory
+wait /bin/sh -c "rm '/private/tmp/Microsoft_OneNote_15.16.0_Updater.pkg' "
+
+// Uncomment the next line to require a restart after the update
+// action requires restart
