@@ -8,7 +8,7 @@ mac of operating system
 
 system version >= "10.9.0"
 
-exists application whose (name of it = "Adobe Acrobat Reader DC.app" and version of it < "15.006.30096" AND version of it >= "15.0")
+exists application whose (name of it = "Adobe Acrobat Reader DC.app" and version of it < "15.0" AND version of it >= "15.6.30096")
 
 ----------
 ACTION SCRIPT
