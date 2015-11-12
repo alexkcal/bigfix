@@ -1,6 +1,8 @@
 Title: Adobe Acrobat Pro DC 15.006.30096 - Adobe Acrobat Pro DC 15.x - Mac OS X
 Additional Notes: 15.006.30096 Out Of Cycle Update (Classic Track), October 29, 2015
 
+The version of Acrobat DC after installing this update is 15.006.30096. BigFix picks it up as "15.6.30096" which is the value to use in the Relevance
+
 ----------
 RELEVANCE
 ----------
@@ -8,13 +10,11 @@ mac of operating system
 
 system version >= "10.9.0"
 
-exists application whose (name of it = "Adobe Acrobat DC.app" and version of it < "15.006.30096" AND version of it >= "15.0")
+exists application whose (name of it = "Adobe Acrobat.app" and version of it < "15.0" AND version of it >= "15.6.30096")
 
 ----------
 ACTION SCRIPT
 ----------
-ADOBE ACROBAT DC FOR MAC - CLASSIC UPDATE PATH
-
 prefetch Acrobat2015Upd1500630096.pkg sha1:f1c891631decd0ecdbf07faec3ef8d72381df61c size:158482509 ftp://ftp.adobe.com/pub/adobe/acrobat/mac/Acrobat2015/1500630096/Acrobat2015Upd1500630096.pkg sha256:bcb8d8056f29606055d1bb4d61c3bc260c61aa717023c854c88f253899002ee7
 
 // Delete the Acrobat DC Update PKG in case it already exists
