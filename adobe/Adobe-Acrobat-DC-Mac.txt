@@ -1,4 +1,4 @@
-Title: Adobe Acrobat DC 15.006.30096 - Adobe Acrobat DC 15.x - Mac OS X
+Title: Adobe Acrobat Pro DC 15.006.30096 - Adobe Acrobat Pro DC 15.x - Mac OS X
 Additional Notes: 15.006.30096 Out Of Cycle Update (Classic Track), October 29, 2015
 
 ----------
