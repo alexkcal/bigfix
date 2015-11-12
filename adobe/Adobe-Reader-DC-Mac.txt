@@ -8,12 +8,12 @@ mac of operating system
 
 system version >= "10.9.0"
 
-exists application whose (name of it = "Adobe Acrobat Reader DC.app" and version of it < "15.0" AND version of it >= "15.6.30096")
+exists application whose (name of it = "Adobe Acrobat Reader DC.app" and version of it < "15.0" AND version of it >= "15.9.30096")
 
 ----------
 ACTION SCRIPT
 ----------
-prefetch Acrobat2015Upd1500630096.pkg sha1:f1c891631decd0ecdbf07faec3ef8d72381df61c size:158482509 ftp://ftp.adobe.com/pub/adobe/acrobat/mac/Acrobat2015/1500630096/Acrobat2015Upd1500630096.pkg sha256:bcb8d8056f29606055d1bb4d61c3bc260c61aa717023c854c88f253899002ee7
+prefetch Acrobat2015Upd1500630096.pkg sha1:f1c891631decd0ecdbf07faec3ef8d72381df61c size:158482509 http://ardownload.adobe.com/pub/adobe/reader/mac/AcrobatDC/1500920077/AcroRdrDCUpd1500920077_MUI.pkg sha256:bcb8d8056f29606055d1bb4d61c3bc260c61aa717023c854c88f253899002ee7
 
 // Delete the Acrobat Reader DC Update PKG in case it already exists
 wait /bin/sh -c "rm '/private/tmp/Acrobat2015Upd1500630096.pkg' "
