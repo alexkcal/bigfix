@@ -31,4 +31,5 @@ wait installer -pkg "/private/tmp/Microsoft_Word_15.16.0_Updater.pkg" -target /
 // Delete the Word Update PKG in the temp directory
 wait /bin/sh -c "rm '/private/tmp/Microsoft_Word_15.16.0_Updater.pkg' "
 
-action requires restart
+// Uncomment the next line to require a restart after the update
+// action requires restart
