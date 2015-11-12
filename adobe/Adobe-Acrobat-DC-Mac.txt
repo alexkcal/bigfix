@@ -15,7 +15,7 @@ exists application whose (name of it = "Adobe Acrobat.app" and version of it < "
 ----------
 ACTION SCRIPT
 ----------
-prefetch Acrobat2015Upd1500630096.pkg sha1:f1c891631decd0ecdbf07faec3ef8d72381df61c size:158482509 ftp://ftp.adobe.com/pub/adobe/acrobat/mac/Acrobat2015/1500630096/Acrobat2015Upd1500630096.pkg sha256:bcb8d8056f29606055d1bb4d61c3bc260c61aa717023c854c88f253899002ee7
+prefetch AcrobatDCUpd1500920077.pkg sha1:0bd3e9c6494757440b167f830e43f795013c32cd size:168481038 ftp://ftp.adobe.com/pub/adobe/acrobat/mac/AcrobatDC/1500920077/AcrobatDCUpd1500920077.pkg sha256:effc530b5b15e5e3b48825d5cd59afd042017fd6c76151a5b4668686de2fdf56
 
 // Delete the Acrobat DC Update PKG in case it already exists
 wait /bin/sh -c "rm '/private/tmp/Acrobat2015Upd1500630096.pkg' "
