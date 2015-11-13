@@ -1,5 +1,14 @@
-Title: Adobe Acrobat Reader DC 15.006.30096 - Adobe Acrobat Reader DC 15.x - Mac OS X
-Additional Notes: 15.006.30096 Out Of Cycle Update (Classic Track), October 29, 2015
+Title: Adobe Acrobat Reader DC 15.9.20077 - Adobe Acrobat Reader DC 15.x - Mac OS X
+Additional Notes: 15.9.20077 Out Of Cycle Update (Continuous Track), October 29, 2015
+
+----------
+DESCRIPTION
+----------
+Use this action to update Adobe Acrobat Reader DC to version 15.009.20077. This action is relevant on Macs running Mavericks or newer with a previous version of Adobe Acrobat Pro DC installed.
+
+Adobe Acrobat Reader Pro DC Update 15.009.20077 Out Of Cycle Update (Continuous Track), October 29, 2015
+
+Note: If Adobe Acrobat Reader Pro DC is open, then the update will not successfully install. Therefore, run this action with no user logged in or uncomment the line in the action to forcibly close Adobe Acrobat Reader Pro DC.
 
 ----------
 RELEVANCE
@@ -8,7 +17,7 @@ mac of operating system
 
 system version >= "10.9.0"
 
-exists application whose (name of it = "Adobe Acrobat Reader DC.app" and version of it < "15.0" AND version of it >= "15.9.30096")
+exists application whose (name of it = "Adobe Acrobat Reader DC.app" and version of it < "15.9.20077" AND version of it >= "15.0")
 
 ----------
 ACTION SCRIPT
@@ -16,20 +25,20 @@ ACTION SCRIPT
 prefetch AcroRdrDCUpd1500920077_MUI.pkg sha1:55228ca1c279a689a289e652ce552ee408dcfeb2 size:80792782 http://ardownload.adobe.com/pub/adobe/reader/mac/AcrobatDC/1500920077/AcroRdrDCUpd1500920077_MUI.pkg sha256:d64dbd24b7e7036f90197a2440634e6b4f106538289e964a9210c710e7a038ca
 
 // Delete the Acrobat Reader DC Update PKG in case it already exists
-wait /bin/sh -c "rm '/private/tmp/Acrobat2015Upd1500630096.pkg' "
+wait /bin/sh -c "rm '/private/tmp/AcroRdrDCUpd1500920077_MUI.pkg' "
 
-// Kill all Acrobat processes to forcibly close Acrobat Reader DC
-// Uncomment the next line to forcibly close Acrobat DC by killing the process
-// wait /usr/bin/killall "AdobeAcrobat"
+// Kill all Acrobat Reader processes to forcibly close Acrobat Reader DC
+// Uncomment the next line to forcibly close Acrobat Reader DC by killing the process
+// wait /bin/sh -c "/usr/bin/killall 'AdobeReader' "
 
 // Move the downloaded Acrobat Reader DC Update PKG to the temp directory
-move "{posix path of file "Acrobat2015Upd1500630096.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/Acrobat2015Upd1500630096.pkg"
+move "{posix path of file "AcroRdrDCUpd1500920077_MUI.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/AcroRdrDCUpd1500920077_MUI.pkg"
 
 // Install the Acrobat Reader DC update
-wait installer -pkg "/private/tmp/Acrobat2015Upd1500630096.pkg" -target /
+wait installer -pkg "/private/tmp/AcroRdrDCUpd1500920077_MUI.pkg" -target /
 
 // Delete the Acrobat Reader DC Update PKG in the temp directory
-wait /bin/sh -c "rm '/private/tmp/Acrobat2015Upd1500630096.pkg' "
+wait /bin/sh -c "rm '/private/tmp/AcroRdrDCUpd1500920077_MUI.pkg' "
 
 // Uncomment the next line to require a restart after installing the update
 // action requires restart
