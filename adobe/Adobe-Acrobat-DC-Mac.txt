@@ -10,7 +10,9 @@ Use this action to update Adobe Acrobat Pro DC to version 15.009.20077. This act
 
 Adobe Acrobat Pro DC Update 15.009.20077 Out Of Cycle Update (Continuous Track), October 29, 2015
 
-Note: If Adobe Acrobat Pro DC is open, then the update will not successfully install. Therefore, run this action with no user logged in or uncomment the line in the action to forcibly close Adobe Acrobat Pro DC.
+Action 1: Use this when Acrobat Pro DC is not running otherwise the update will fail. Acrobat Pro DC needs to be closed in order for the update to succesfully install. If you would like to forcibly close Acrobat Pro DC, then use Action 2.
+
+Action 2: Use this to forcibly close Acrobat Pro DC by killing the process, and then proceed with installing the update.
 
 ----------
 RELEVANCE
@@ -24,6 +26,7 @@ exists application whose (name of it = "Adobe Acrobat.app" and version of it < "
 ----------
 ACTION SCRIPT
 ----------
+ACTION 1 - Click here to initiate the deployment process. 
 prefetch AcrobatDCUpd1500920077.pkg sha1:0bd3e9c6494757440b167f830e43f795013c32cd size:168481038 http://ardownload.adobe.com/pub/adobe/acrobat/mac/AcrobatDC/1500920077/AcrobatDCUpd1500920077.pkg sha256:effc530b5b15e5e3b48825d5cd59afd042017fd6c76151a5b4668686de2fdf56
 
 // Delete the Acrobat DC Update PKG in case it already exists
@@ -32,6 +35,28 @@ wait /bin/sh -c "rm '/private/tmp/AcrobatDCUpd1500920077.pkg' "
 // Kill all Acrobat processes to forcibly close Acrobat DC
 // Uncomment the next line to forcibly close Acrobat DC by killing the process
 // wait /bin/sh -c "/usr/bin/killall 'AdobeAcrobat' "
+
+// Move the downloaded Acrobat DC Update PKG to the temp directory
+move "{posix path of file "AcrobatDCUpd1500920077.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/AcrobatDCUpd1500920077.pkg"
+
+// Install the Acrobat DC update
+wait installer -pkg "/private/tmp/AcrobatDCUpd1500920077.pkg" -target /
+
+// Delete the Acrobat DC Update PKG in the temp directory
+wait /bin/sh -c "rm '/private/tmp/AcrobatDCUpd1500920077.pkg' "
+
+// Uncomment the next line to require a restart after installing the update
+// action requires restart
+
+ACTION 2 - Click here to upgrade to Adobe Acrobat Pro DC regardless of whether Acrobat Pro DC is running.
+prefetch AcrobatDCUpd1500920077.pkg sha1:0bd3e9c6494757440b167f830e43f795013c32cd size:168481038 http://ardownload.adobe.com/pub/adobe/acrobat/mac/AcrobatDC/1500920077/AcrobatDCUpd1500920077.pkg sha256:effc530b5b15e5e3b48825d5cd59afd042017fd6c76151a5b4668686de2fdf56
+
+// Delete the Acrobat DC Update PKG in case it already exists
+wait /bin/sh -c "rm '/private/tmp/AcrobatDCUpd1500920077.pkg' "
+
+// Kill all Acrobat processes to forcibly close Acrobat DC
+// Uncomment the next line to forcibly close Acrobat DC by killing the process
+wait /bin/sh -c "/usr/bin/killall 'AdobeAcrobat' "
 
 // Move the downloaded Acrobat DC Update PKG to the temp directory
 move "{posix path of file "AcrobatDCUpd1500920077.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/AcrobatDCUpd1500920077.pkg"
