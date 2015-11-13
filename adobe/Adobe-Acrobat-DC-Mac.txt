@@ -10,6 +10,8 @@ Use this action to update Adobe Acrobat Pro DC to version 15.009.20077. This act
 
 Adobe Acrobat Pro DC Update 15.009.20077 Out Of Cycle Update (Continuous Track), October 29, 2015
 
+Note: If Adobe Acrobat Pro DC is open, then the update will not successfully install. Therefore, run this action with no user logged in or uncomment the line in the action to forcibly close Adobe Acrobat Pro DC.
+
 ----------
 RELEVANCE
 ----------
