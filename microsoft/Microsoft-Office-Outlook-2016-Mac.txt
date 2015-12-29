@@ -1,5 +1,6 @@
-Title: Microsoft Outlook 2016 Update 15.16.0 - 15.x - Mac OS X
-Additional Notes: Update 15.16.0 - November 10, 2015
+Title: Microsoft Outlook 2016 Update 15.17.1 - 15.x - Mac OS X
+Additional Notes: Update 15.17.1 - December 17, 2015
+URL: https://support.microsoft.com/en-us/kb/3127248
 
 ----------
 RELEVANCE
@@ -8,28 +9,28 @@ mac of operating system
 
 system version >= "10.10.0"
 
-exists application whose (name of it = "Microsoft Outlook.app" and version of it < "15.16.0" AND version of it >= "15.15.0")
+exists application whose (name of it = "Microsoft Outlook.app" and version of it < "15.17.1" AND version of it >= "15.15.0")
 
 ----------
 ACTION SCRIPT
 ----------
-prefetch Microsoft_Outlook_15.16.0_Updater.pkg sha1:32b7728685ae6ef54b65e0d40d833c2ce81f931b size:560709746 http://download.microsoft.com/download/3/6/B/36BFEABA-4181-4CBF-868F-A28207585D69/Microsoft_Outlook_15.16.0_Updater.pkg sha256:2b95cf90cb7d3b777bedba717d930db1e08359e2d6529b58faa8f95a895c8070
+prefetch Microsoft_Outlook_15.17.1_Updater.pkg sha1:cb6bb42b52183e9da87fe4673edc4aa7e0652a46 size:579852450 http://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_Outlook_15.17.1_Updater.pkg sha256:2d269c969e550b844dab5776d6deac80bcde4072cb7905fa43a133af8f0d84ae
 
 // Delete the Outlook Update PKG in case it exists
-wait /bin/sh -c "rm '/private/tmp/Microsoft_Outlook_15.16.0_Updater.pkg' "
+wait /bin/sh -c "rm '/private/tmp/Microsoft_Outlook_15.17.1_Updater.pkg' "
 
 // Kill all Outlook processes to forcibly close Outlook
 // Uncomment the next line to forcibly close Outlook by killing the process
 // wait /usr/bin/killall -9 "Microsoft Outlook"
 
 // Move the downloaded Outlook Update PKG to the temp directory
-move "{posix path of file "Microsoft_Outlook_15.16.0_Updater.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/Microsoft_Outlook_15.16.0_Updater.pkg"
+move "{posix path of file "Microsoft_Outlook_15.17.1_Updater.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/Microsoft_Outlook_15.17.1_Updater.pkg"
 
 // Install the Outlook Update
-wait installer -pkg "/private/tmp/Microsoft_Outlook_15.16.0_Updater.pkg" -target /
+wait installer -pkg "/private/tmp/Microsoft_Outlook_15.17.1_Updater.pkg" -target /
 
 // Delete the Outlook Update PKG in the temp directory
-wait /bin/sh -c "rm '/private/tmp/Microsoft_Outlook_15.16.0_Updater.pkg' "
+wait /bin/sh -c "rm '/private/tmp/Microsoft_Outlook_15.17.1_Updater.pkg' "
 
 // Uncomment the next line to require a restart after the update
 // action requires restart
