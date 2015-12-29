@@ -1,6 +1,5 @@
 Title: Microsoft Word 2016 Update 15.17.1 - 15.x - Mac OS X
-Additional Notes: Update 15.17.1 - December 17, 2015
-URL: https://support.microsoft.com/en-us/kb/3127248
+Additional Notes: Update 15.17.1 - December 17, 2015, KB3127248: https://support.microsoft.com/en-us/kb/3127248
 
 ----------
 RELEVANCE
