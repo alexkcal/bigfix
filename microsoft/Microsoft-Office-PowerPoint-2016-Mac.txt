@@ -1,5 +1,5 @@
-Title: Microsoft PowerPoint 2016 Update 15.16.0 - 15.x - Mac OS X
-Additional Notes: Update 15.16.0 - November 10, 2015
+Title: Microsoft PowerPoint 2016 Update 15.17.0 - 15.x - Mac OS X
+Additional Notes: Update 15.17.0 - December 10, 2015, MS15-131: https://support.microsoft.com/en-us/kb/3119518
 
 ----------
 RELEVANCE
@@ -8,28 +8,28 @@ mac of operating system
 
 system version >= "10.10.0"
 
-exists application whose (name of it = "Microsoft PowerPoint.app" and version of it < "15.16.0" AND version of it >= "15.15.0")
+exists application whose (name of it = "Microsoft PowerPoint.app" and version of it < "15.17.0" AND version of it >= "15.15.0")
 
 ----------
 ACTION SCRIPT
 ----------
-prefetch Microsoft_PowerPoint_15.16.0_Updater.pkg sha1:fc2d26a0e120a182aab8548aaf3a61c688a5488d size:758270360 http://download.microsoft.com/download/B/9/5/B95E058E-7BE9-485E-AB5E-46AD8DEE7036/Microsoft_PowerPoint_15.16.0_Updater.pkg sha256:c5261936fbf50339761b51ad6cf751e8e5978bc9af5f56ce1a1a34eef6a864f1
+prefetch Microsoft_PowerPoint_15.17.0_Updater.pkg sha1:ceaf207cf224c0562f5eb7a4c6c10e775c50aa9b size:783089554 http://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_PowerPoint_15.17.0_Updater.pkg sha256:c8589419bbbde75c03dfa76bcdc6b2c703f3207cc7843f67f5f89692df5a072f
 
 // Delete the PowerPoint Update PKG in case it exists
-wait /bin/sh -c "rm '/private/tmp/Microsoft_PowerPoint_15.16.0_Updater.pkg' "
+wait /bin/sh -c "rm '/private/tmp/Microsoft_PowerPoint_15.17.0_Updater.pkg' "
 
 // Kill all PowerPoint processes to forcibly close PowerPoint
 // Uncomment the next line to forcibly close PowerPoint by killing the process
 // wait /usr/bin/killall -9 "Microsoft PowerPoint"
 
 // Move the downloaded PowerPoint Update PKG to the temp directory
-move "{posix path of file "Microsoft_PowerPoint_15.16.0_Updater.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/Microsoft_PowerPoint_15.16.0_Updater.pkg"
+move "{posix path of file "Microsoft_PowerPoint_15.17.0_Updater.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/Microsoft_PowerPoint_15.17.0_Updater.pkg"
 
 // Install the PowerPoint Update
-wait installer -pkg "/private/tmp/Microsoft_PowerPoint_15.16.0_Updater.pkg" -target /
+wait installer -pkg "/private/tmp/Microsoft_PowerPoint_15.17.0_Updater.pkg" -target /
 
 // Delete the PowerPoint Update PKG in the temp directory
-wait /bin/sh -c "rm '/private/tmp/Microsoft_PowerPoint_15.16.0_Updater.pkg' "
+wait /bin/sh -c "rm '/private/tmp/Microsoft_PowerPoint_15.17.0_Updater.pkg' "
 
 // Uncomment the next line to require a restart after the update
 // action requires restart
