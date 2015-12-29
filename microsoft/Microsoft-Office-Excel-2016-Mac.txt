@@ -1,5 +1,5 @@
-Title: Microsoft Excel 2016 Update 15.16.0 - 15.x - Mac OS X
-Additional Notes: Update 15.16.0 - November 10, 2015
+Title: Microsoft Excel 2016 Update 15.17.0 - 15.x - Mac OS X
+Additional Notes: Update 15.17.0 - December 10, 2015, KB3127248: https://support.microsoft.com/en-us/kb/3127248
 
 ----------
 RELEVANCE
@@ -8,28 +8,28 @@ mac of operating system
 
 system version >= "10.10.0"
 
-exists application whose (name of it = "Microsoft Excel.app" and version of it < "15.16.0" AND version of it >= "15.15.0")
+exists application whose (name of it = "Microsoft Excel.app" and version of it < "15.17.0" AND version of it >= "15.15.0")
 
 ----------
 ACTION SCRIPT
 ----------
-prefetch Microsoft_Excel_15.16.0_Updater.pkg sha1:40de190e7f1f64b659dbb4d59cdc3bc8443d6272 size:808116322 http://download.microsoft.com/download/2/B/5/2B5F0C37-F4C1-4A32-82F2-975EB6A434FA/Microsoft_Excel_15.16.0_Updater.pkg sha256:e11d4966cbad43e0364ed0708003dddcc7a07c2316f46af9799691985f1041b2
+prefetch Microsoft_Excel_15.17.0_Updater.pkg sha1:c2ee8230e0d584d9ee7a570d27853043e4cc649c size:832408522 http://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_Excel_15.17.0_Updater.pkg sha256:aefc17e94c234a0a1403e73fa8b3c1b214b53a2842e26041887c4443d62bfe60
 
 // Delete the Excel Update PKG in case it exists
-wait /bin/sh -c "rm '/private/tmp/Microsoft_Excel_15.16.0_Updater.pkg' "
+wait /bin/sh -c "rm '/private/tmp/Microsoft_Excel_15.17.0_Updater.pkg' "
 
 // Kill all Excel processes to forcibly close Excel
 // Uncomment the next line to forcibly close Excel by killing the process
 // wait /usr/bin/killall -9 "Microsoft Excel"
 
 // Move the downloaded Excel Update PKG to the temp directory
-move "{posix path of file "Microsoft_Excel_15.16.0_Updater.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/Microsoft_Excel_15.16.0_Updater.pkg"
+move "{posix path of file "Microsoft_Excel_15.17.0_Updater.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/Microsoft_Excel_15.17.0_Updater.pkg"
 
 // Install the Excel Update
-wait installer -pkg "/private/tmp/Microsoft_Excel_15.16.0_Updater.pkg" -target /
+wait installer -pkg "/private/tmp/Microsoft_Excel_15.17.0_Updater.pkg" -target /
 
 // Delete the Excel Update PKG in the temp directory
-wait /bin/sh -c "rm '/private/tmp/Microsoft_Excel_15.16.0_Updater.pkg' "
+wait /bin/sh -c "rm '/private/tmp/Microsoft_Excel_15.17.0_Updater.pkg' "
 
 // Uncomment the next line to require a restart after the update
 // action requires restart
