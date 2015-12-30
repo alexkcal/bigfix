@@ -1,5 +1,13 @@
 Title: Microsoft Word 2016 Update 15.17.1 - 15.x - Mac OS X
-Additional Notes: Update 15.17.1 - December 17, 2015, KB3127248: https://support.microsoft.com/en-us/kb/3127248
+
+----------
+DESCRIPTION
+----------
+Use this action to update Microsoft Word 2016 for Mac to version 15.17.1. The update is relevant on Macs running Yosemite or newer with Word 2016 installed.
+
+Update 15.17.1 was released on December 17, 2015
+
+KB3127248: https://support.microsoft.com/en-us/kb/3127248
 
 ----------
 RELEVANCE
