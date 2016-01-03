@@ -1,7 +1,7 @@
 Title: Adobe Acrobat Pro DC 15.009.20077 - Adobe Acrobat Pro DC 15.x - Mac OS X
 Additional Notes: 15.009.20077 Out Of Cycle Update (Continuous Track), October 29, 2015
 
-The version of Acrobat DC after installing this update is 15.009.20077. BigFix detects it as "15.009.20077" which is the value used in the Relevance
+The version of Acrobat DC after installing this update is 15.009.20077. BigFix detects it as "15.9.20077" which is the value used in the Relevance
 
 ----------
 DESCRIPTION
@@ -9,6 +9,8 @@ DESCRIPTION
 Use this action to update Adobe Acrobat Pro DC to version 15.009.20077. This action is relevant on Macs running Mavericks or newer with a previous version of Adobe Acrobat Pro DC installed.
 
 Adobe Acrobat Pro DC Update 15.009.20077 Out Of Cycle Update (Continuous Track), October 29, 2015
+
+https://helpx.adobe.com/acrobat/release-note/release-notes-acrobat-reader.html
 
 Action 1: Use this when Acrobat Pro DC is not running otherwise the update will fail. Acrobat Pro DC needs to be closed in order for the update to succesfully install. If you would like to forcibly close Acrobat Pro DC, then use Action 2.
 
