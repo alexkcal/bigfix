@@ -1,12 +1,12 @@
-Title: Adobe Acrobat Reader DC 15.9.20077 - Adobe Acrobat Reader DC 15.x - Mac OS X
-Additional Notes: 15.9.20077 Out Of Cycle Update (Continuous Track), October 29, 2015
+Title: Adobe Acrobat Reader DC 15.010.20056 - Adobe Acrobat Reader DC 15.x - Mac OS X
+Additional Notes: 15.010.20056 Planned Update (Continuous Track), October 29, 2015
 
 ----------
 DESCRIPTION
 ----------
-Use this action to update Adobe Acrobat Reader DC to version 15.009.20077. This action is relevant on Macs running Mavericks or newer with a previous version of Adobe Acrobat Pro DC installed.
+Use this action to update Adobe Acrobat Reader DC to version 15.010.20056. This action is relevant on Macs running Mavericks or newer with a previous version of Adobe Acrobat Pro DC installed.
 
-Adobe Acrobat Reader DC Update 15.009.20077 Out Of Cycle Update (Continuous Track), October 29, 2015
+Adobe Acrobat Reader DC Update 15.010.20056 Planned Update (Continuous Track), October 29, 2015
 
 https://helpx.adobe.com/acrobat/release-note/release-notes-acrobat-reader.html
 
@@ -21,51 +21,51 @@ mac of operating system
 
 system version >= "10.9.0"
 
-exists application whose (name of it = "Adobe Acrobat Reader DC.app" and version of it < "15.9.20077" AND version of it >= "15.0")
+exists application whose (name of it = "Adobe Acrobat Reader DC.app" and version of it < "15.010.20056" AND version of it >= "15.0")
 
 ----------
 ACTION SCRIPT
 ----------
 ACTION 1 - Click here to initiate the deployment process. 
-prefetch AcroRdrDCUpd1500920077_MUI.pkg sha1:55228ca1c279a689a289e652ce552ee408dcfeb2 size:80792782 http://ardownload.adobe.com/pub/adobe/reader/mac/AcrobatDC/1500920077/AcroRdrDCUpd1500920077_MUI.pkg sha256:d64dbd24b7e7036f90197a2440634e6b4f106538289e964a9210c710e7a038ca
+prefetch AcroRdrDCUpd1501020056_MUI.pkg sha1:ee6717bd7d1abcabcc87a685453e6cb2bf8acce0 size:86105619 http://ardownload.adobe.com/pub/adobe/reader/mac/AcrobatDC/1501020056/AcroRdrDCUpd1501020056_MUI.pkg sha256:5d801caeaeaee283845eb186379d72b43083cce83c761b119fa3495d232527dc
 
 // Delete the Acrobat Reader DC Update PKG in case it already exists
-wait /bin/sh -c "rm '/private/tmp/AcroRdrDCUpd1500920077_MUI.pkg' "
+wait /bin/sh -c "rm '/private/tmp/AcroRdrDCUpd1501020056_MUI.pkg' "
 
 // Kill all Acrobat Reader processes to forcibly close Acrobat Reader DC
 // Uncomment the next line to forcibly close Acrobat Reader DC by killing the process
 // wait /bin/sh -c "/usr/bin/killall 'AdobeReader' "
 
 // Move the downloaded Acrobat Reader DC Update PKG to the temp directory
-move "{posix path of file "AcroRdrDCUpd1500920077_MUI.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/AcroRdrDCUpd1500920077_MUI.pkg"
+move "{posix path of file "AcroRdrDCUpd1501020056_MUI.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/AcroRdrDCUpd1501020056_MUI.pkg"
 
 // Install the Acrobat Reader DC update
-wait installer -pkg "/private/tmp/AcroRdrDCUpd1500920077_MUI.pkg" -target /
+wait installer -pkg "/private/tmp/AcroRdrDCUpd1501020056_MUI.pkg" -target /
 
 // Delete the Acrobat Reader DC Update PKG in the temp directory
-wait /bin/sh -c "rm '/private/tmp/AcroRdrDCUpd1500920077_MUI.pkg' "
+wait /bin/sh -c "rm '/private/tmp/AcroRdrDCUpd1501020056_MUI.pkg' "
 
 // Uncomment the next line to require a restart after installing the update
 // action requires restart
 
 ACTION 2 - Click here to upgrade to Adobe Acrobat Reader DC regardless of whether Acrobat Reader DC is running. 
-prefetch AcroRdrDCUpd1500920077_MUI.pkg sha1:55228ca1c279a689a289e652ce552ee408dcfeb2 size:80792782 http://ardownload.adobe.com/pub/adobe/reader/mac/AcrobatDC/1500920077/AcroRdrDCUpd1500920077_MUI.pkg sha256:d64dbd24b7e7036f90197a2440634e6b4f106538289e964a9210c710e7a038ca
+prefetch AcroRdrDCUpd1501020056_MUI.pkg sha1:ee6717bd7d1abcabcc87a685453e6cb2bf8acce0 size:86105619 http://ardownload.adobe.com/pub/adobe/reader/mac/AcrobatDC/1501020056/AcroRdrDCUpd1501020056_MUI.pkg sha256:5d801caeaeaee283845eb186379d72b43083cce83c761b119fa3495d232527dc
 
 // Delete the Acrobat Reader DC Update PKG in case it already exists
-wait /bin/sh -c "rm '/private/tmp/AcroRdrDCUpd1500920077_MUI.pkg' "
+wait /bin/sh -c "rm '/private/tmp/AcroRdrDCUpd1501020056_MUI.pkg' "
 
 // Kill all Acrobat Reader processes to forcibly close Acrobat Reader DC
 // Uncomment the next line to forcibly close Acrobat Reader DC by killing the process
 wait /bin/sh -c "/usr/bin/killall 'AdobeReader' "
 
 // Move the downloaded Acrobat Reader DC Update PKG to the temp directory
-move "{posix path of file "AcroRdrDCUpd1500920077_MUI.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/AcroRdrDCUpd1500920077_MUI.pkg"
+move "{posix path of file "AcroRdrDCUpd1501020056_MUI.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/AcroRdrDCUpd1501020056_MUI.pkg"
 
 // Install the Acrobat Reader DC update
-wait installer -pkg "/private/tmp/AcroRdrDCUpd1500920077_MUI.pkg" -target /
+wait installer -pkg "/private/tmp/AcroRdrDCUpd1501020056_MUI.pkg" -target /
 
 // Delete the Acrobat Reader DC Update PKG in the temp directory
-wait /bin/sh -c "rm '/private/tmp/AcroRdrDCUpd1500920077_MUI.pkg' "
+wait /bin/sh -c "rm '/private/tmp/AcroRdrDCUpd1501020056_MUI.pkg' "
 
 // Uncomment the next line to require a restart after installing the update
 // action requires restart
