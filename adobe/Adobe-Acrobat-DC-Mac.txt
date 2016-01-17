@@ -35,45 +35,45 @@ exists application whose (name of it = "Adobe Acrobat.app" and version of it < "
 ACTION SCRIPT
 ----------
 ACTION 1 - Click here to initiate the deployment process. 
-prefetch AcrobatDCUpd1501020056.pkg sha1:981d1367eb9e1926bba62549764ef9b90700d6a9 size:249165728 ftp://ftp.adobe.com/pub/adobe/acrobat/mac/AcrobatDC/1501020056/AcrobatDCUpd1501020056.pkg sha256:240341d7407b4f29cf1b527e841ecc61657da092a17fa2dd109a0b92ab3a789b
+prefetch AcrobatDCUpd1501020056.pkg sha1:981d1367eb9e1926bba62549764ef9b90700d6a9 size:249165728 http://ardownload.adobe.com/pub/adobe/acrobat/mac/AcrobatDC/1501020056/AcrobatDCUpd1501020056.pkg sha256:240341d7407b4f29cf1b527e841ecc61657da092a17fa2dd109a0b92ab3a789b
 
 // Delete the Acrobat DC Update PKG in case it already exists
-wait /bin/sh -c "rm '/private/tmp/AcrobatDCUpd1500920077.pkg' "
+wait /bin/sh -c "rm '/private/tmp/AcrobatDCUpd1501020056.pkg' "
 
 // Kill all Acrobat processes to forcibly close Acrobat DC
 // Uncomment the next line to forcibly close Acrobat DC by killing the process
 // wait /bin/sh -c "/usr/bin/killall 'AdobeAcrobat' "
 
 // Move the downloaded Acrobat DC Update PKG to the temp directory
-move "{posix path of file "AcrobatDCUpd1500920077.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/AcrobatDCUpd1500920077.pkg"
+move "{posix path of file "AcrobatDCUpd1501020056.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/AcrobatDCUpd1501020056.pkg"
 
 // Install the Acrobat DC update
-wait installer -pkg "/private/tmp/AcrobatDCUpd1500920077.pkg" -target /
+wait installer -pkg "/private/tmp/AcrobatDCUpd1501020056.pkg" -target /
 
 // Delete the Acrobat DC Update PKG in the temp directory
-wait /bin/sh -c "rm '/private/tmp/AcrobatDCUpd1500920077.pkg' "
+wait /bin/sh -c "rm '/private/tmp/AcrobatDCUpd1501020056.pkg' "
 
 // Uncomment the next line to require a restart after installing the update
 // action requires restart
 
 ACTION 2 - Click here to upgrade to Adobe Acrobat Pro DC regardless of whether Acrobat Pro DC is running.
-prefetch AcrobatDCUpd1500920077.pkg sha1:0bd3e9c6494757440b167f830e43f795013c32cd size:168481038 http://ardownload.adobe.com/pub/adobe/acrobat/mac/AcrobatDC/1500920077/AcrobatDCUpd1500920077.pkg sha256:effc530b5b15e5e3b48825d5cd59afd042017fd6c76151a5b4668686de2fdf56
+prefetch AcrobatDCUpd1501020056.pkg sha1:981d1367eb9e1926bba62549764ef9b90700d6a9 size:249165728 http://ardownload.adobe.com/pub/adobe/acrobat/mac/AcrobatDC/1501020056/AcrobatDCUpd1501020056.pkg sha256:240341d7407b4f29cf1b527e841ecc61657da092a17fa2dd109a0b92ab3a789b
 
 // Delete the Acrobat DC Update PKG in case it already exists
-wait /bin/sh -c "rm '/private/tmp/AcrobatDCUpd1500920077.pkg' "
+wait /bin/sh -c "rm '/private/tmp/AcrobatDCUpd1501020056.pkg' "
 
 // Kill all Acrobat processes to forcibly close Acrobat DC
 // Uncomment the next line to forcibly close Acrobat DC by killing the process
 wait /bin/sh -c "/usr/bin/killall 'AdobeAcrobat' "
 
 // Move the downloaded Acrobat DC Update PKG to the temp directory
-move "{posix path of file "AcrobatDCUpd1500920077.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/AcrobatDCUpd1500920077.pkg"
+move "{posix path of file "AcrobatDCUpd1501020056.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/AcrobatDCUpd1501020056.pkg"
 
 // Install the Acrobat DC update
-wait installer -pkg "/private/tmp/AcrobatDCUpd1500920077.pkg" -target /
+wait installer -pkg "/private/tmp/AcrobatDCUpd1501020056.pkg" -target /
 
 // Delete the Acrobat DC Update PKG in the temp directory
-wait /bin/sh -c "rm '/private/tmp/AcrobatDCUpd1500920077.pkg' "
+wait /bin/sh -c "rm '/private/tmp/AcrobatDCUpd1501020056.pkg' "
 
 // Uncomment the next line to require a restart after installing the update
 // action requires restart
