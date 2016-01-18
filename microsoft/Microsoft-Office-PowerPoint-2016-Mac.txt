@@ -21,23 +21,23 @@ exists application whose (name of it = "Microsoft PowerPoint.app" and version of
 ----------
 ACTION SCRIPT
 ----------
-prefetch Microsoft_PowerPoint_15.17.0_Updater.pkg sha1:ceaf207cf224c0562f5eb7a4c6c10e775c50aa9b size:783089554 http://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_PowerPoint_15.17.0_Updater.pkg sha256:c8589419bbbde75c03dfa76bcdc6b2c703f3207cc7843f67f5f89692df5a072f
+prefetch Microsoft_PowerPoint_15.18.0_Updater.pkg sha1:aa713ea5a2d9aed9d85278de1a16277373cc0af7 size:787639886 http://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_PowerPoint_15.18.0_Updater.pkg sha256:03f2f61876c523937563e2fdb8dfca68f38afd8a5abe6f0f83402f9748dd1baa
 
 // Delete the PowerPoint Update PKG in case it exists
-wait /bin/sh -c "rm '/private/tmp/Microsoft_PowerPoint_15.17.0_Updater.pkg' "
+wait /bin/sh -c "rm '/private/tmp/Microsoft_PowerPoint_15.18.0_Updater.pkg' "
 
 // Kill all PowerPoint processes to forcibly close PowerPoint
 // Uncomment the next line to forcibly close PowerPoint by killing the process
 // wait /usr/bin/killall -9 "Microsoft PowerPoint"
 
 // Move the downloaded PowerPoint Update PKG to the temp directory
-move "{posix path of file "Microsoft_PowerPoint_15.17.0_Updater.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/Microsoft_PowerPoint_15.17.0_Updater.pkg"
+move "{posix path of file "Microsoft_PowerPoint_15.18.0_Updater.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/Microsoft_PowerPoint_15.18.0_Updater.pkg"
 
 // Install the PowerPoint Update
-wait installer -pkg "/private/tmp/Microsoft_PowerPoint_15.17.0_Updater.pkg" -target /
+wait installer -pkg "/private/tmp/Microsoft_PowerPoint_15.18.0_Updater.pkg" -target /
 
 // Delete the PowerPoint Update PKG in the temp directory
-wait /bin/sh -c "rm '/private/tmp/Microsoft_PowerPoint_15.17.0_Updater.pkg' "
+wait /bin/sh -c "rm '/private/tmp/Microsoft_PowerPoint_15.18.0_Updater.pkg' "
 
 // Uncomment the next line to require a restart after the update
 // action requires restart
