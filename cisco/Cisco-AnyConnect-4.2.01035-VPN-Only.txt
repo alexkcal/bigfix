@@ -1,0 +1,43 @@
+Title: Cisco AnyConnect VPN Only Update 4.2.01035 - Mac OS X
+
+----------
+DESCRIPTION
+----------
+Use this action to update any previous version of the Cisco AnyConnect Secure Mobility Client. Any previous versions including 4.x, 3.x, etc. will be updated to the latest version. This VPN-Only installation package will uninstall any other components other than the VPN client and then install the latest version.
+
+The update is relevant on Macs running Mountain Lion 10.8 or newer, and has any version of the AnyConnect client that is not the latest.
+
+Cisco AnyConnect Secure Mobility Client 4.2 Release Notes
+
+http://www.cisco.com/c/en/us/td/docs/security/vpn_client/anyconnect/anyconnect42/b_Release_Notes_AnyConnect_4_2.html
+
+Important Note: Use this action when the AnyConnect VPN client will not be running, such as when no user is logged in. The installation will silently quit the AnyConnect VPN client and proceed with the installing the upgrade.
+
+----------
+RELEVANCE
+----------
+mac of operating system
+
+system version >= "10.8.0"
+
+exists application whose (name of it = "Cisco AnyConnect Secure Mobility Client.app" and version of it < "4.2.01035")
+
+----------
+ACTION SCRIPT
+----------
+prefetch anyconnect-4.2.01035-vpnonly.pkg sha1:6907e6bc3e7436f092d4b7076fcdbc1bdc483944 size:12692864 https://berkeley.box.com/shared/static/wtl5xjhzkivxblxa3ii8pa38wod06hxz.pkg sha256:3a4b4faa70b4066ec600b0ceffc05264678cd10a98ee15e65186aaef7d54def1
+
+// Delete the AnyConnect VPN-Only PKG in case it exists
+wait /bin/sh -c "rm '/private/tmp/anyconnect-4.2.01035-vpnonly.pkg' "
+
+// Move the downloaded Word Update PKG to the temp directory
+move "{posix path of file "anyconnect-4.2.01035-vpnonly.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/anyconnect-4.2.01035-vpnonly.pkg"
+
+// Install the Word Update
+wait installer -pkg "/private/tmp/anyconnect-4.2.01035-vpnonly.pkg" -target /
+
+// Delete the Word Update PKG in the temp directory
+wait /bin/sh -c "rm '/private/tmp/anyconnect-4.2.01035-vpnonly.pkg' "
+
+// A restart is not required but uncomment the next line if you would like to require a restart after the update
+// action requires restart
