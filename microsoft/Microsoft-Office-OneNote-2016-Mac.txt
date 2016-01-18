@@ -1,13 +1,13 @@
-Title: Microsoft OneNote 2016 Update 15.17.0 - 15.x - Mac OS X
+Title: Microsoft OneNote 2016 Update 15.18.0 - 15.x - Mac OS X
 
 ----------
 DESCRIPTION
 ----------
-Use this action to update Microsoft OneNote 2016 for Mac to version 15.17.0. The update is relevant on Macs running Yosemite or newer with OneNote 2016 installed.
+Use this action to update Microsoft OneNote 2016 for Mac to version 15.18.0. The update is relevant on Macs running Yosemite or newer with OneNote 2016 installed.
 
-Update 15.17.0 was released on December 10, 2015
+Update 15.18.0 was released on January 12, 2016
 
-MS15-131: https://support.microsoft.com/en-us/kb/3119518
+MS16-004: https://support.microsoft.com/en-us/kb/3133711
 
 ----------
 RELEVANCE
@@ -16,7 +16,7 @@ mac of operating system
 
 system version >= "10.10.0"
 
-exists application whose (name of it = "Microsoft OneNote.app" and version of it < "15.17.0" AND version of it >= "15.15.0")
+exists application whose (name of it = "Microsoft OneNote.app" and version of it < "15.18.0" AND version of it >= "15.15.0")
 
 ----------
 ACTION SCRIPT
