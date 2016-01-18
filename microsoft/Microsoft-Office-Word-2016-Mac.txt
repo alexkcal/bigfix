@@ -21,23 +21,23 @@ exists application whose (name of it = "Microsoft Word.app" and version of it < 
 ----------
 ACTION SCRIPT
 ----------
-prefetch Microsoft_Word_15.17.1_Updater.pkg sha1:3ec117e07b78db54e656474a91e8494df5110653 size:940512124 http://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_Word_15.17.1_Updater.pkg sha256:c41c9f5e955cf99ea8a833bbfb2a8ec5a79d96b4bd48cf05ce7b3b9ccd2b827b
+prefetch Microsoft_Word_15.18.0_Updater.pkg sha1:c8107414fcc784887c1c97c5d06b724fe0a44d7b size:945937988 http://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_Word_15.18.0_Updater.pkg sha256:aaa062ad67d3fc36b807dadf854ff7f8c2a3ebdaed04eb5d2ea090d97d06d2a0
 
 // Delete the Word Update PKG in case it exists
-wait /bin/sh -c "rm '/private/tmp/Microsoft_Word_15.17.1_Updater.pkg' "
+wait /bin/sh -c "rm '/private/tmp/Microsoft_Word_15.18.0_Updater.pkg' "
 
 // Kill all Word processes to forcibly close Word
 // Uncomment the next line to forcibly close Word by killing the process
 // wait /usr/bin/killall -9 "Microsoft Word"
 
 // Move the downloaded Word Update PKG to the temp directory
-move "{posix path of file "Microsoft_Word_15.17.1_Updater.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/Microsoft_Word_15.17.1_Updater.pkg"
+move "{posix path of file "Microsoft_Word_15.18.0_Updater.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/Microsoft_Word_15.18.0_Updater.pkg"
 
 // Install the Word Update
-wait installer -pkg "/private/tmp/Microsoft_Word_15.17.1_Updater.pkg" -target /
+wait installer -pkg "/private/tmp/Microsoft_Word_15.18.0_Updater.pkg" -target /
 
 // Delete the Word Update PKG in the temp directory
-wait /bin/sh -c "rm '/private/tmp/Microsoft_Word_15.17.1_Updater.pkg' "
+wait /bin/sh -c "rm '/private/tmp/Microsoft_Word_15.18.0_Updater.pkg' "
 
 // Uncomment the next line to require a restart after the update
 // action requires restart
