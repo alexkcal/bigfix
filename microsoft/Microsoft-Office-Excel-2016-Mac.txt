@@ -21,23 +21,23 @@ exists application whose (name of it = "Microsoft Excel.app" and version of it <
 ----------
 ACTION SCRIPT
 ----------
-prefetch Microsoft_Excel_15.17.0_Updater.pkg sha1:c2ee8230e0d584d9ee7a570d27853043e4cc649c size:832408522 http://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_Excel_15.17.0_Updater.pkg sha256:aefc17e94c234a0a1403e73fa8b3c1b214b53a2842e26041887c4443d62bfe60
+prefetch Microsoft_Excel_15.18.0_Updater.pkg sha1:3d638a9a569b112806b1058ba218d3e044cd5d81 size:837836352 http://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_Excel_15.18.0_Updater.pkg sha256:5ce9f3d2ef88335c45b5c1163fdff893656cc4086e6bfdf7acb53e1631f74a4a
 
 // Delete the Excel Update PKG in case it exists
-wait /bin/sh -c "rm '/private/tmp/Microsoft_Excel_15.17.0_Updater.pkg' "
+wait /bin/sh -c "rm '/private/tmp/Microsoft_Excel_15.18.0_Updater.pkg' "
 
 // Kill all Excel processes to forcibly close Excel
 // Uncomment the next line to forcibly close Excel by killing the process
 // wait /usr/bin/killall -9 "Microsoft Excel"
 
 // Move the downloaded Excel Update PKG to the temp directory
-move "{posix path of file "Microsoft_Excel_15.17.0_Updater.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/Microsoft_Excel_15.17.0_Updater.pkg"
+move "{posix path of file "Microsoft_Excel_15.18.0_Updater.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/Microsoft_Excel_15.18.0_Updater.pkg"
 
 // Install the Excel Update
-wait installer -pkg "/private/tmp/Microsoft_Excel_15.17.0_Updater.pkg" -target /
+wait installer -pkg "/private/tmp/Microsoft_Excel_15.18.0_Updater.pkg" -target /
 
 // Delete the Excel Update PKG in the temp directory
-wait /bin/sh -c "rm '/private/tmp/Microsoft_Excel_15.17.0_Updater.pkg' "
+wait /bin/sh -c "rm '/private/tmp/Microsoft_Excel_15.18.0_Updater.pkg' "
 
 // Uncomment the next line to require a restart after the update
 // action requires restart
