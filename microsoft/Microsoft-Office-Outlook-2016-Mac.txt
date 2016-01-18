@@ -21,23 +21,23 @@ exists application whose (name of it = "Microsoft Outlook.app" and version of it
 ----------
 ACTION SCRIPT
 ----------
-prefetch Microsoft_Outlook_15.17.1_Updater.pkg sha1:cb6bb42b52183e9da87fe4673edc4aa7e0652a46 size:579852450 http://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_Outlook_15.17.1_Updater.pkg sha256:2d269c969e550b844dab5776d6deac80bcde4072cb7905fa43a133af8f0d84ae
+prefetch Microsoft_Outlook_15.18.0_Updater.pkg sha1:34d7ba8af703a13e748bef6c89e8d94158761b0d size:623685186 http://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_Outlook_15.18.0_Updater.pkg sha256:9538cbd55395a0df98919f962ebf2fbb663a71a462b09957b802210a6b34b585
 
 // Delete the Outlook Update PKG in case it exists
-wait /bin/sh -c "rm '/private/tmp/Microsoft_Outlook_15.17.1_Updater.pkg' "
+wait /bin/sh -c "rm '/private/tmp/Microsoft_Outlook_15.18.0_Updater.pkg' "
 
 // Kill all Outlook processes to forcibly close Outlook
 // Uncomment the next line to forcibly close Outlook by killing the process
 // wait /usr/bin/killall -9 "Microsoft Outlook"
 
 // Move the downloaded Outlook Update PKG to the temp directory
-move "{posix path of file "Microsoft_Outlook_15.17.1_Updater.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/Microsoft_Outlook_15.17.1_Updater.pkg"
+move "{posix path of file "Microsoft_Outlook_15.18.0_Updater.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/Microsoft_Outlook_15.18.0_Updater.pkg"
 
 // Install the Outlook Update
-wait installer -pkg "/private/tmp/Microsoft_Outlook_15.17.1_Updater.pkg" -target /
+wait installer -pkg "/private/tmp/Microsoft_Outlook_15.18.0_Updater.pkg" -target /
 
 // Delete the Outlook Update PKG in the temp directory
-wait /bin/sh -c "rm '/private/tmp/Microsoft_Outlook_15.17.1_Updater.pkg' "
+wait /bin/sh -c "rm '/private/tmp/Microsoft_Outlook_15.18.0_Updater.pkg' "
 
 // Uncomment the next line to require a restart after the update
 // action requires restart
