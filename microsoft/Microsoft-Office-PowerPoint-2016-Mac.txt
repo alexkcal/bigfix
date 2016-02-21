@@ -21,7 +21,7 @@ exists application whose (name of it = "Microsoft PowerPoint.app" and version of
 ----------
 ACTION SCRIPT
 ----------
-prefetch Microsoft_PowerPoint_15.19.1_160212_Updater.pkg sha1:aa713ea5a2d9aed9d85278de1a16277373cc0af7 size:787639886 http://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_PowerPoint_15.19.1_160212_Updater.pkg sha256:03f2f61876c523937563e2fdb8dfca68f38afd8a5abe6f0f83402f9748dd1baa
+prefetch Microsoft_PowerPoint_15.19.1_160212_Updater.pkg sha1:d48fe2f7e82500f25f43296815487a4c3b8895f6 size:811302476 http://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_PowerPoint_15.19.1_160212_Updater.pkg sha256:e05a33662330705a2f09242b1a0f242ba7465b90e1757957484a8f5bdc7f522b
 
 // Delete the PowerPoint Update PKG in case it exists
 wait /bin/sh -c "rm '/private/tmp/Microsoft_PowerPoint_15.19.1_160212_Updater.pkg' "
