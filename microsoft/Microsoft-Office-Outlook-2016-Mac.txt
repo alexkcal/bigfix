@@ -1,13 +1,13 @@
-Title: Microsoft Outlook 2016 Update 15.18.0 - 15.x - Mac OS X
+Title: Microsoft Outlook 2016 Update 15.19.1 - 15.x - Mac OS X
 
 ----------
 DESCRIPTION
 ----------
-Use this action to update Microsoft Outlook 2016 for Mac to version 15.18.0. The update is relevant on Macs running Yosemite or newer with Outlook 2016 installed.
+Use this action to update Microsoft Outlook 2016 for Mac to version 15.19.1. The update is relevant on Macs running Yosemite or newer with Outlook 2016 installed.
 
-Update 15.18.0 was released on January 12, 2016
+Update 15.19.1 was released on February 16, 2016
 
-MS16-004: https://support.microsoft.com/en-us/kb/3133711
+MS16-015: https://support.microsoft.com/en-us/kb/3134241
 
 ----------
 RELEVANCE
@@ -16,28 +16,28 @@ mac of operating system
 
 system version >= "10.10.0"
 
-exists application whose (name of it = "Microsoft Outlook.app" and version of it < "15.18.0" AND version of it >= "15.15.0")
+exists application whose (name of it = "Microsoft Outlook.app" and version of it < "15.19.1" AND version of it >= "15.15.0")
 
 ----------
 ACTION SCRIPT
 ----------
-prefetch Microsoft_Outlook_15.18.0_Updater.pkg sha1:34d7ba8af703a13e748bef6c89e8d94158761b0d size:623685186 http://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_Outlook_15.18.0_Updater.pkg sha256:9538cbd55395a0df98919f962ebf2fbb663a71a462b09957b802210a6b34b585
+prefetch Microsoft_Outlook_15.19.1_160212_Updater.pkg sha1:a2637fe7c718231189b83673c741e60cb1a66eb7 size:726904393 http://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_Outlook_15.19.1_160212_Updater.pkg sha256:56f75c94b2236fe838165ab91026f9ae1f34f093331905a8da100caee53b4bcf
 
 // Delete the Outlook Update PKG in case it exists
-wait /bin/sh -c "rm '/private/tmp/Microsoft_Outlook_15.18.0_Updater.pkg' "
+wait /bin/sh -c "rm '/private/tmp/Microsoft_Outlook_15.19.1_160212_Updater.pkg' "
 
 // Kill all Outlook processes to forcibly close Outlook
 // Uncomment the next line to forcibly close Outlook by killing the process
 // wait /usr/bin/killall -9 "Microsoft Outlook"
 
 // Move the downloaded Outlook Update PKG to the temp directory
-move "{posix path of file "Microsoft_Outlook_15.18.0_Updater.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/Microsoft_Outlook_15.18.0_Updater.pkg"
+move "{posix path of file "Microsoft_Outlook_15.19.1_160212_Updater.pkg" of folder "__Download" of client folder of current site}" "/private/tmp/Microsoft_Outlook_15.19.1_160212_Updater.pkg"
 
 // Install the Outlook Update
-wait installer -pkg "/private/tmp/Microsoft_Outlook_15.18.0_Updater.pkg" -target /
+wait installer -pkg "/private/tmp/Microsoft_Outlook_15.19.1_160212_Updater.pkg" -target /
 
 // Delete the Outlook Update PKG in the temp directory
-wait /bin/sh -c "rm '/private/tmp/Microsoft_Outlook_15.18.0_Updater.pkg' "
+wait /bin/sh -c "rm '/private/tmp/Microsoft_Outlook_15.19.1_160212_Updater.pkg' "
 
 // Uncomment the next line to require a restart after the update
 // action requires restart
